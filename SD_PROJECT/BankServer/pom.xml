@@ -43,5 +43,5 @@
             <version>4.3.1.Final</version>
         </dependency>
     </dependencies>
-    <name>BankServer</name>
+    <name>BankServer2</name>
 </project>

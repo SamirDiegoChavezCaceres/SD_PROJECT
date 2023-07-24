@@ -10,6 +10,7 @@ import javax.persistence.Id;
 public class Accounts implements Serializable {
     @Id
     private int acc_num;
+    private int acc_client_dni;
     private int acc_pin;
     private int acc_bal;
     private int acc_status;
@@ -20,6 +21,14 @@ public class Accounts implements Serializable {
 
     public void setAcc_num(int acc_num) {
         this.acc_num = acc_num;
+    }
+    
+    public int getAcc_client_dni() {
+        return acc_client_dni;
+    }
+
+    public void setAcc_client_dni(int acc_client_dni) {
+        this.acc_client_dni = acc_client_dni;
     }
 
     public int getAcc_pin() {

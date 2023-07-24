@@ -20,6 +20,7 @@ public class Main_Driver {
     static String pay;
     static String date_srt;
     static String date_end;
+    static String acc_bank;
     
     static void fun_acc_num()
     {
