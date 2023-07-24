@@ -9,6 +9,7 @@ public interface BankInterface extends Remote
     public boolean checkAccNum(int acnt) throws RemoteException;
     public boolean checkAccStatus(int acnt) throws RemoteException;
     public boolean checkAccPin(int acnt, int pin) throws RemoteException;
+    public String getBank() throws RemoteException;
     public void lockAcc(int acnt) throws RemoteException;
     
     public void deposit(int acnt, int amt) throws RemoteException;

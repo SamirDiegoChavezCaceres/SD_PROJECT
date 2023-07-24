@@ -12,13 +12,48 @@ import static com.assignment.bank.Main_Driver.bank_reg;
 public class Main_Process {
     
     
+    static void pros_connect(Integer acc) throws AccessException, NotBoundException
+    {
+        try {
+            if(Main_Driver.acc_bank == null){
+                bank_reg = LocateRegistry.getRegistry("127.0.0.1", 1099);
+                Main_Driver.bank_pros = (BankInterface) bank_reg.lookup("BankA");
+                if(Main_Driver.bank_pros.checkAccNum(acc)){
+                    Main_Driver.acc_bank = "A";
+                } else {
+                    bank_reg = LocateRegistry.getRegistry("127.0.0.2", 1098);
+                    Main_Driver.bank_pros = (BankInterface) bank_reg.lookup("BankB");
+                    if(Main_Driver.bank_pros.checkAccNum(acc)){
+                        Main_Driver.acc_bank = "B";
+                    } else {
+                        bank_reg = LocateRegistry.getRegistry("127.0.0.3", 1097);
+                        Main_Driver.bank_pros = (BankInterface) bank_reg.lookup("BankC");
+                        if(Main_Driver.bank_pros.checkAccNum(acc)){
+                            Main_Driver.acc_bank = "C";
+                        } 
+                    }
+                }
+            } 
+        } catch (RemoteException ex) {
+            Logger.getLogger(Main_Driver.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     static void pros_connect() throws AccessException, NotBoundException
     {
         try {
-            bank_reg = LocateRegistry.getRegistry("127.0.0.1", 1099);
-             
-            Main_Driver.bank_pros = (BankInterface) bank_reg.lookup("Bank");
-            
+            if(Main_Driver.acc_bank.equals("A")){
+                bank_reg = LocateRegistry.getRegistry("127.0.0.1", 1099);
+                Main_Driver.bank_pros = (BankInterface) bank_reg.lookup("BankA");
+            } else if(Main_Driver.acc_bank.equals("B")){
+                bank_reg = LocateRegistry.getRegistry("127.0.0.1", 1098);
+                Main_Driver.bank_pros = (BankInterface) bank_reg.lookup("BankB");
+            } else if(Main_Driver.acc_bank.equals("C")){
+                bank_reg = LocateRegistry.getRegistry("127.0.0.1", 1097);
+                Main_Driver.bank_pros = (BankInterface) bank_reg.lookup("BankC");
+            } else {
+                throw new AccessException("cuenta no asociada a ningun banco");
+            }
         } catch (RemoteException ex) {
             Logger.getLogger(Main_Driver.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -31,21 +66,21 @@ public class Main_Process {
         
         try {
             
-            try 
-            {
-                pros_connect();
-            } 
-            catch (AccessException | NotBoundException ex) 
-            {
-                Logger.getLogger(Main_Driver.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
             Integer[] in_val = Numpad_Panel.in.toArray(new Integer[Numpad_Panel.in.size()]);
             
             for (int i = Numpad_Panel.in.size()-1; i>=0; i--)
             {
                 Main_Driver.acc_num = Main_Driver.acc_num + (in_val[i] * multiplier);
                 multiplier = multiplier * 10;
+            }
+            
+            try 
+            {
+                pros_connect(Main_Driver.acc_num);
+            } 
+            catch (AccessException | NotBoundException ex) 
+            {
+                Logger.getLogger(Main_Driver.class.getName()).log(Level.SEVERE, null, ex);
             }
             
             if (Main_Driver.bank_pros.checkAccNum(Main_Driver.acc_num))
@@ -64,7 +99,7 @@ public class Main_Process {
             }
             else
             {
-                Numpad_Panel.in_disp = "<html><p style=\"text-align:center;\"> LA CUENTA NO EXISTE <br><br> INTENTAR OTRA VEZ <br><br>";
+                Numpad_Panel.in_disp = "<html><p style=\"text-align:center;\"> LA CUENTA NO EXISTE EN: "+Main_Driver.acc_bank+"<br><br> INTENTAR OTRA VEZ <br><br>";
                 Numpad_Panel.in.clear();
                 Main_Driver.new_num.input();
             }

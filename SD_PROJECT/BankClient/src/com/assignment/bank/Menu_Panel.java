@@ -23,7 +23,7 @@ public class Menu_Panel extends javax.swing.JFrame {
     
     static String menu_disp;
     static String acc_bal;
-    
+    static String banks_info;
     
     void get_bal()
     {
@@ -37,7 +37,7 @@ public class Menu_Panel extends javax.swing.JFrame {
             {
                 Logger.getLogger(Main_Driver.class.getName()).log(Level.SEVERE, null, ex);
             }
-            acc_bal = "<html><p style=\"text-align:center;\"> SALDO DISPONIBLE <br><br>FJD "+Main_Driver.bank_pros.checkBalance(Main_Driver.acc_num);
+            acc_bal = "<html><p style=\"text-align:center;\"> SALDO DISPONIBLE <br>FJD "+Main_Driver.bank_pros.checkBalance(Main_Driver.acc_num);
                                    
         }
         catch (RemoteException e)
@@ -45,10 +45,16 @@ public class Menu_Panel extends javax.swing.JFrame {
         }
     }
     
+    void get_banks_info()
+    {
+        banks_info = "<br><p style=\"text-align:center;\"> SE ENCUENTRA EN EL<br>SISTEMA DEL BANCO: "+Main_Driver.acc_bank;
+    }
+    
     public Menu_Panel() {
         initComponents();
         get_bal();
-        info_panel.setText(menu_disp+acc_bal);
+        get_banks_info();
+        info_panel.setText(menu_disp+acc_bal+banks_info);
     }
 
     /**

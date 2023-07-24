@@ -18,10 +18,22 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;  
  
 public class BankImpl extends UnicastRemoteObject implements BankInterface {
- 
-    public BankImpl() throws RemoteException {}
+    org.hibernate.Session session;
+    String bank_name;
+    public BankImpl(String bank) throws RemoteException {
+        session = HibernateUtil.getSessionFactory(bank).openSession();
+        bank_name = bank;
+    }
     
-    org.hibernate.Session session = HibernateUtil.getSessionFactory().openSession();
+    @Override
+    /**
+        * @desc checks if the account number given by the user exists in the database
+        * @param int acnt - the account number to be checked
+        * @return bool - account number exists or does not exist
+    */
+    public String getBank() {
+        return bank_name;
+    }
 
     @Override
     /**

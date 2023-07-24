@@ -439,7 +439,7 @@ public class Numpad_Panel extends javax.swing.JFrame {
     }//GEN-LAST:event_num_6_btnActionPerformed
 
     private void num_7_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num_7_btnActionPerformed
-        if (in.size()>in_size)
+        if (in.size()<in_size)
         {
             in_key = 7;
             in.add(in_key);
