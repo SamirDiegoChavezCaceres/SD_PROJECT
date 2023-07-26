@@ -190,7 +190,22 @@ public class Main_Process {
             }
             
             if(Main_Driver.depo_third){
-                Main_Driver.bank_pros.deposit(Main_Driver.depo_num, dept_val);
+                /* Faltaria checkear si el monto excede nuestra capacidad y llamas al retiro
+                   seria revisar pros_with()
+                */
+                /* ESTE SERIA UN EJEMPLO PROBAR SI FUNCIONA
+                if (Main_Driver.bank_pros.checkOverdraft(Main_Driver.acc_num, dept_val))
+                {
+                    Main_Driver.fun_depo_amt();
+                    Numpad_Panel.in_disp = "<html><p style=\"text-align:center;\"> EL MONTO DEL RETIRO EXCEDE EL SALDO DEL MONTO <br><br> INGRESAR NUEVO MONTO <br><br>FJD <html>";
+                    Main_Driver.new_num.display_message();
+                }
+                else
+                {
+                    Main_Driver.bank_pros.withdraw(Main_Driver.acc_num, dept_val);
+                    Main_Driver.bank_pros.deposit(Main_Driver.depo_num, dept_val);
+                }
+                */
             } else {
                 Main_Driver.bank_pros.deposit(Main_Driver.acc_num, dept_val);
             }
