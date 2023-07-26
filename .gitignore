@@ -52,3 +52,6 @@ buildNumber.properties
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+
+SD_PROJECT/BankClient/nbbuild.xml
+SD_PROJECT/BankClient/nbproject/
