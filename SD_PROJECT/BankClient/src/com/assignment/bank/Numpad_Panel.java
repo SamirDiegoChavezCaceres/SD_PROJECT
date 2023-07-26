@@ -502,6 +502,10 @@ public class Numpad_Panel extends javax.swing.JFrame {
                 new Option_Panel().setVisible(true);
                 this.setVisible(false);
                 break;
+            case "depo_sel":
+                Main_Process.pros_depo_num();
+                this.setVisible(false);
+                break;
             default:
                 break;
         }

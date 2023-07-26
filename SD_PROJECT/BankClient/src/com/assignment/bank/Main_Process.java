@@ -189,8 +189,14 @@ public class Main_Process {
                 multiplier = multiplier * 10;
             }
             
-            Main_Driver.bank_pros.deposit(Main_Driver.acc_num, dept_val);
+            if(Main_Driver.depo_third){
+                Main_Driver.bank_pros.deposit(Main_Driver.depo_num, dept_val);
+            } else {
+                Main_Driver.bank_pros.deposit(Main_Driver.acc_num, dept_val);
+            }
+            
             Menu_Panel.menu_disp = "<html><p style=\"text-align:center;\"> DEPÓSITO EXITOSO <br><br> ";
+            Main_Driver.depo_third = false;
             new Menu_Panel().setVisible(true);
             
         }
@@ -239,6 +245,11 @@ public class Main_Process {
             Logger.getLogger(Main_Driver.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+    }
+    
+    static void pros_depo_num(){
+        /* supongo que deberia ser como pros pay num solo que con esta variable depo_num */
+        Main_Driver.fun_depo_amt();
     }
     
     static void pros_pay_num()

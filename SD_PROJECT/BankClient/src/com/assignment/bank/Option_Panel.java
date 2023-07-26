@@ -37,6 +37,9 @@ public class Option_Panel extends javax.swing.JFrame {
             opt1_btn.setText("ENERGÍA FIJI LTD");
             opt2_btn.setText("AUTORIDAD DEL AGUA FIJI");
             opt3_btn.setText("CIELO PACÍFICO");
+        } else if ("depo_sel".equals(Main_Driver.opt)){
+            /* Aca se mostraria los botones de "a cuenta propia" o terceros
+            */
         }
     }
 
@@ -161,7 +164,8 @@ public class Option_Panel extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    /*  Entonces modificariamos la funcion de los botones segun a cual seleccionamos */
     private void opt1_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opt1_btnActionPerformed
         if (null != Main_Driver.opt)
         switch (Main_Driver.opt) {
@@ -182,6 +186,10 @@ public class Option_Panel extends javax.swing.JFrame {
                 Main_Process.pros_pay();
                 this.setVisible(false);
                 break;
+            case "depo_sel":
+                Main_Driver.fun_depo_amt();
+                break;
+            
             default:
                 break;
         }
@@ -191,7 +199,8 @@ public class Option_Panel extends javax.swing.JFrame {
         if (null != Main_Driver.opt)
         switch (Main_Driver.opt) {
             case "depo":
-                Main_Driver.fun_depo();
+                Main_Driver.depo_third = false;
+                Main_Driver.fun_depo_sel();
                 this.setVisible(false);
                 break;
             case "with":
@@ -206,6 +215,10 @@ public class Option_Panel extends javax.swing.JFrame {
             case "pay":
                 Main_Driver.fun_pay_sel();
                 this.setVisible(false);
+                break;
+            case "depo_sel":
+                Main_Driver.depo_third = true;
+                Main_Driver.fun_depo_num();
                 break;
             default:
                 break;

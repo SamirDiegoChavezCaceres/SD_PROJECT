@@ -21,6 +21,8 @@ public class Main_Driver {
     static String date_srt;
     static String date_end;
     static String acc_bank;
+    static Integer depo_num;
+    static Boolean depo_third = false;
     
     static void fun_acc_num()
     {
@@ -45,7 +47,24 @@ public class Main_Driver {
         new_num.input();
     }
     
-    static void fun_depo()
+    /* Aca se crearia a fun_depo_sel() que hara algo parecido a fun_pay_sel()
+        trendremos que elegir entre deposito a cuenta propia o a terceros.
+    */
+    static void fun_depo_sel()
+    {
+        opt = "depo_sel";
+    }
+    /*
+       Aca se crearia a fun_depo_num() que hara algo parecido a fun_pay_num()
+        para ingresar el numero de cuenta a depositar en caso escojamos a terceros
+    */
+    
+    static void fun_depo_num()
+    {
+        /* trabajaria igual a fun_pay_num() */
+    }
+    
+    static void fun_depo_amt()
     {
         opt = "depo";
         Numpad_Panel.in_size = IN_MED;

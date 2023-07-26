@@ -180,7 +180,8 @@ public class Menu_Panel extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void depo_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_depo_btnActionPerformed
-        Main_Driver.fun_depo();
+        /* aca se llamaria a un tipo fun_depo_sel() ya no a fun_depo */
+        Main_Driver.fun_depo_sel();
         this.setVisible(false);
     }//GEN-LAST:event_depo_btnActionPerformed
 
