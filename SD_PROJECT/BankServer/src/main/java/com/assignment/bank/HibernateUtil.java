@@ -12,6 +12,8 @@ public class HibernateUtil {
 
 	private static SessionFactory initHibernateUtil(String bank) {
         //method responsible for configuring a sessionFactory oject based on the confg file
+        
+        /* MODIFY TO BE ABLE TO IDENTY THE CORRECT PATH IN LINUX / WINDOWS */
             File f;
             if(bank.equals("A")){
                 f = new File("C:/Users/Usuario/Desktop/Codigo - copia/BankServer2/src/main/resources/hibernateA.cfg.xml");
