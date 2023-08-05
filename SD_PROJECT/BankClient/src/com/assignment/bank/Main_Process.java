@@ -193,7 +193,6 @@ public class Main_Process {
                 /* Faltaria checkear si el monto excede nuestra capacidad y llamas al retiro
                    seria revisar pros_with()
                 */
-                /* ESTE SERIA UN EJEMPLO PROBAR SI FUNCIONA
                 if (Main_Driver.bank_pros.checkOverdraft(Main_Driver.acc_num, dept_val))
                 {
                     Main_Driver.fun_depo_amt();
@@ -205,7 +204,6 @@ public class Main_Process {
                     Main_Driver.bank_pros.withdraw(Main_Driver.acc_num, dept_val);
                     Main_Driver.bank_pros.deposit(Main_Driver.depo_num, dept_val);
                 }
-                */
             } else {
                 Main_Driver.bank_pros.deposit(Main_Driver.acc_num, dept_val);
             }
@@ -266,7 +264,7 @@ public class Main_Process {
         /* supongo que deberia ser como pros pay num solo que con esta variable depo_num */
         
         Integer multiplier = 1;
-        Main_Driver.depo_num = 123466;
+        Main_Driver.depo_num = 0;
         
         Integer[] in_val = Numpad_Panel.in.toArray(new Integer[Numpad_Panel.in.size()]);
         for (int i = Numpad_Panel.in.size()-1; i>=0; i--)

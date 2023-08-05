@@ -66,6 +66,7 @@ public class Numpad_Panel extends javax.swing.JFrame {
             case "acc_ck":
             case "depo":
             case "with":
+            case "depo_sel":
             case "pay":
                 if (in.isEmpty())
                 {
@@ -537,6 +538,10 @@ public class Numpad_Panel extends javax.swing.JFrame {
                 break;
             case "pay":
                 Main_Driver.fun_pay_amt();
+                this.setVisible(false);
+                break;
+            case "depo_sel":
+                new Menu_Panel().setVisible(true);
                 this.setVisible(false);
                 break;
             default:
