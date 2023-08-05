@@ -264,6 +264,17 @@ public class Main_Process {
     
     static void pros_depo_num(){
         /* supongo que deberia ser como pros pay num solo que con esta variable depo_num */
+        
+        Integer multiplier = 1;
+        Main_Driver.depo_num = 123466;
+        
+        Integer[] in_val = Numpad_Panel.in.toArray(new Integer[Numpad_Panel.in.size()]);
+        for (int i = Numpad_Panel.in.size()-1; i>=0; i--)
+        {
+            Main_Driver.depo_num = Main_Driver.depo_num + (in_val[i] * multiplier);
+            multiplier = multiplier * 10;
+        }
+        
         Main_Driver.fun_depo_amt();
     }
     
