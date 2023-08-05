@@ -78,6 +78,7 @@ public class Numpad_Panel extends javax.swing.JFrame {
                 }
                 break;
             default:
+                
         }
         
         info_panel.setText(in_disp+disp_in);

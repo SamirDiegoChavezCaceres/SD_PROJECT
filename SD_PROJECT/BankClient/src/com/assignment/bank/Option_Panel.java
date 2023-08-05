@@ -37,7 +37,12 @@ public class Option_Panel extends javax.swing.JFrame {
             opt1_btn.setText("ENERGÍA FIJI LTD");
             opt2_btn.setText("AUTORIDAD DEL AGUA FIJI");
             opt3_btn.setText("CIELO PACÍFICO");
-        } else if ("depo_sel".equals(Main_Driver.opt)){
+        }
+        else if ("depo_sel".equals(Main_Driver.opt)){
+            info_panel.setText(opt_disp);
+            opt1_btn.setText("CUENTA PROPIA");
+            opt2_btn.setText("CUENTA A TERCEROS");
+            opt3_btn.setVisible(false);
             /* Aca se mostraria los botones de "a cuenta propia" o terceros
             */
         }
@@ -164,8 +169,8 @@ public class Option_Panel extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    //  Entonces modificariamos la funcion de los botones segun a cual seleccionamos *
     
-    /*  Entonces modificariamos la funcion de los botones segun a cual seleccionamos */
     private void opt1_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opt1_btnActionPerformed
         if (null != Main_Driver.opt)
         switch (Main_Driver.opt) {
@@ -188,8 +193,8 @@ public class Option_Panel extends javax.swing.JFrame {
                 break;
             case "depo_sel":
                 Main_Driver.fun_depo_amt();
+                this.setVisible(false);
                 break;
-            
             default:
                 break;
         }
@@ -203,6 +208,7 @@ public class Option_Panel extends javax.swing.JFrame {
                 Main_Driver.fun_depo_sel();
                 this.setVisible(false);
                 break;
+              
             case "with":
                 Main_Driver.fun_with();
                 this.setVisible(false);
@@ -219,6 +225,8 @@ public class Option_Panel extends javax.swing.JFrame {
             case "depo_sel":
                 Main_Driver.depo_third = true;
                 Main_Driver.fun_depo_num();
+                this.setVisible(false);
+
                 break;
             default:
                 break;
