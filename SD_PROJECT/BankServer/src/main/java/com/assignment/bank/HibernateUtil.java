@@ -16,11 +16,11 @@ public class HibernateUtil {
         /* MODIFY TO BE ABLE TO IDENTY THE CORRECT PATH IN LINUX / WINDOWS */
             File f;
             if(bank.equals("A")){
-                f = new File("C:/Users/Usuario/Desktop/Codigo - copia/BankServer2/src/main/resources/hibernateA.cfg.xml");
+                f = new File("src/main/resources/hibernateA.cfg.xml");
             } else if(bank.equals("B")){
-                f = new File("C:/Users/Usuario/Desktop/Codigo - copia/BankServer2/src/main/resources/hibernateB.cfg.xml");		
+                f = new File("src/main/resources/hibernateB.cfg.xml");		
             } else {
-                f = new File("C:/Users/Usuario/Desktop/Codigo - copia/BankServer2/src/main/resources/hibernateC.cfg.xml");
+                f = new File("src/main/resources/hibernateC.cfg.xml");
             }
             try {
                     return new Configuration().configure(f).buildSessionFactory();

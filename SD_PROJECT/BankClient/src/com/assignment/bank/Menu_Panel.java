@@ -37,7 +37,7 @@ public class Menu_Panel extends javax.swing.JFrame {
             {
                 Logger.getLogger(Main_Driver.class.getName()).log(Level.SEVERE, null, ex);
             }
-            acc_bal = "<html><p style=\"text-align:center;\"> SALDO DISPONIBLE <br>FJD "+Main_Driver.bank_pros.checkBalance(Main_Driver.acc_num);
+            acc_bal = "<html><p style=\"text-align:center;\"> SALDO DISPONIBLE <br> S/. "+Main_Driver.bank_pros.checkBalance(Main_Driver.acc_num);
                                    
         }
         catch (RemoteException e)

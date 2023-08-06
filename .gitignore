@@ -54,4 +54,5 @@ buildNumber.properties
 .classpath
 
 SD_PROJECT/BankClient/nbbuild.xml
-SD_PROJECT/BankClient/nbproject/
+SD_PROJECT/BankClient/nbproject/private/
+/SD_PROJECT/JavaProject3/nbproject/private/

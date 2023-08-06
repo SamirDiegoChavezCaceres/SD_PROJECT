@@ -53,6 +53,11 @@ public class Main_Driver {
     static void fun_depo_sel()
     {
         opt = "depo_sel";
+        Option_Panel.opt_disp = "<html><p style=\"text-align:center;\"> SELECCIONE  ";
+        new_opt = new Option_Panel();
+        new_opt.setVisible(true);
+        
+        
     }
     /*
        Aca se crearia a fun_depo_num() que hara algo parecido a fun_pay_num()
@@ -62,13 +67,22 @@ public class Main_Driver {
     static void fun_depo_num()
     {
         /* trabajaria igual a fun_pay_num() */
+        Numpad_Panel.in_size = IN_LRG;
+        Numpad_Panel.in_disp = "<html><p style=\"text-align:center;\"> INGRESA NÚMERO DE CUENTA <br><br>";
+        Numpad_Panel.in.clear();
+        new_num = new Numpad_Panel();
+        Numpad_Panel.in.clear();
+        new_num.setVisible(true);
+        new_num.input();
+        
+        
     }
     
     static void fun_depo_amt()
     {
         opt = "depo";
         Numpad_Panel.in_size = IN_MED;
-        Numpad_Panel.in_disp = "<html><p style=\"text-align:center;\"> INGRESE EL MONTO DEL DEPÓSITO <br><br>FJD ";
+        Numpad_Panel.in_disp = "<html><p style=\"text-align:center;\"> INGRESE EL MONTO DEL DEPÓSITO <br><br> S/. ";
         new_num = new Numpad_Panel();
         Numpad_Panel.in.clear();
         new_num.setVisible(true);
@@ -79,7 +93,7 @@ public class Main_Driver {
     {
         opt = "with";
         Numpad_Panel.in_size = IN_MED;
-        Numpad_Panel.in_disp = "<html><p style=\"text-align:center;\"> INGRESE LA CANTIDAD DE RETIRO <br><br>FJD ";
+        Numpad_Panel.in_disp = "<html><p style=\"text-align:center;\"> INGRESE LA CANTIDAD DE RETIRO <br><br> S/. ";
         new_num = new Numpad_Panel();
         Numpad_Panel.in.clear();
         new_num.setVisible(true);
@@ -109,7 +123,7 @@ public class Main_Driver {
     {
         opt = "pay";
         Numpad_Panel.in_size = IN_MED;
-        Numpad_Panel.in_disp = "<html><p style=\"text-align:center;\"> INGRESE EL IMPORTE DEL PAGO <br><br> FJD ";
+        Numpad_Panel.in_disp = "<html><p style=\"text-align:center;\"> INGRESE EL IMPORTE DEL PAGO <br><br> S/. ";
         new_num = new Numpad_Panel();
         Numpad_Panel.in.clear();
         new_num.setVisible(true);

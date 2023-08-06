@@ -66,6 +66,7 @@ public class Numpad_Panel extends javax.swing.JFrame {
             case "acc_ck":
             case "depo":
             case "with":
+            case "depo_sel":
             case "pay":
                 if (in.isEmpty())
                 {
@@ -78,9 +79,20 @@ public class Numpad_Panel extends javax.swing.JFrame {
                 }
                 break;
             default:
+                
         }
         
         info_panel.setText(in_disp+disp_in);
+    }
+    
+    public static String concatenarArrayList(ArrayList<Integer> arrayList) {
+        StringBuilder resultado = new StringBuilder();
+
+        for (Integer elemento : arrayList) {
+            resultado.append(elemento.toString());
+        }
+
+        return resultado.toString();
     }
     
     public Numpad_Panel() {
@@ -484,12 +496,12 @@ public class Numpad_Panel extends javax.swing.JFrame {
                 Main_Process.pros_acc_pin();
                 break;
             case "depo":
-                Option_Panel.opt_disp = "<html><p style=\"text-align:center;\"><html>CONFIRMAR DEPÓSITO DE<br><br>FJD <html>"+Numpad_Panel.in.toString();
+                Option_Panel.opt_disp = "<html><p style=\"text-align:center;\"><html>CONFIRMAR DEPÓSITO DE<br><br> S/. <html>"+concatenarArrayList(Numpad_Panel.in);
                 new Option_Panel().setVisible(true);
                 this.setVisible(false);
                 break;
             case "with":
-                Option_Panel.opt_disp = "<html><p style=\"text-align:center;\"><html>CONFIRMAR RETIRO DE <br><br>FJD <html>"+Numpad_Panel.in.toString();
+                Option_Panel.opt_disp = "<html><p style=\"text-align:center;\"><html>CONFIRMAR RETIRO DE <br><br> S/. <html>"+concatenarArrayList(Numpad_Panel.in);
                 new Option_Panel().setVisible(true);
                 this.setVisible(false);
                 break;
@@ -498,7 +510,7 @@ public class Numpad_Panel extends javax.swing.JFrame {
                 this.setVisible(false);
                 break;
             case "pay":
-                Option_Panel.opt_disp = "<html><p style=\"text-align:center;\"><html>CONFIRMAR PAGO DE<br><br>FJD <html>"+Numpad_Panel.in.toString() +"<br><br> A " +Main_Driver.pay +"<br>NÚMERO DE CUENTA " +Main_Driver.pay_num;
+                Option_Panel.opt_disp = "<html><p style=\"text-align:center;\"><html>CONFIRMAR PAGO DE<br><br> S/. <html>"+concatenarArrayList(Numpad_Panel.in) +"<br><br> A " +Main_Driver.pay +"<br> NÚMERO DE CUENTA " +Main_Driver.pay_num;
                 new Option_Panel().setVisible(true);
                 this.setVisible(false);
                 break;
@@ -536,6 +548,10 @@ public class Numpad_Panel extends javax.swing.JFrame {
                 break;
             case "pay":
                 Main_Driver.fun_pay_amt();
+                this.setVisible(false);
+                break;
+            case "depo_sel":
+                new Menu_Panel().setVisible(true);
                 this.setVisible(false);
                 break;
             default:
