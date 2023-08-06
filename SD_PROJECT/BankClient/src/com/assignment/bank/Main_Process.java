@@ -196,7 +196,7 @@ public class Main_Process {
                 if (Main_Driver.bank_pros.checkOverdraft(Main_Driver.acc_num, dept_val))
                 {
                     Main_Driver.fun_depo_amt();
-                    Numpad_Panel.in_disp = "<html><p style=\"text-align:center;\"> EL MONTO DEL RETIRO EXCEDE EL SALDO DEL MONTO <br><br> INGRESAR NUEVO MONTO <br><br>FJD <html>";
+                    Numpad_Panel.in_disp = "<html><p style=\"text-align:center;\"> EL MONTO DEL RETIRO EXCEDE EL SALDO DEL MONTO <br><br> INGRESAR NUEVO MONTO <br><br> S/. <html>";
                     Main_Driver.new_num.display_message();
                 }
                 else
@@ -243,7 +243,7 @@ public class Main_Process {
             if (Main_Driver.bank_pros.checkOverdraft(Main_Driver.acc_num, with_val))
             {
                 Main_Driver.fun_with();
-                Numpad_Panel.in_disp = "<html><p style=\"text-align:center;\"> EL MONTO DEL RETIRO EXCEDE EL SALDO DEL MONTO <br><br> INGRESAR NUEVO MONTO <br><br>FJD <html>";
+                Numpad_Panel.in_disp = "<html><p style=\"text-align:center;\"> EL MONTO DEL RETIRO EXCEDE EL SALDO DEL MONTO <br><br> INGRESAR NUEVO MONTO <br><br> S/. <html>";
                 Main_Driver.new_num.display_message();
             }
             else

@@ -82,7 +82,7 @@ public class Main_Driver {
     {
         opt = "depo";
         Numpad_Panel.in_size = IN_MED;
-        Numpad_Panel.in_disp = "<html><p style=\"text-align:center;\"> INGRESE EL MONTO DEL DEPÓSITO <br><br>FJD ";
+        Numpad_Panel.in_disp = "<html><p style=\"text-align:center;\"> INGRESE EL MONTO DEL DEPÓSITO <br><br> S/. ";
         new_num = new Numpad_Panel();
         Numpad_Panel.in.clear();
         new_num.setVisible(true);
@@ -93,7 +93,7 @@ public class Main_Driver {
     {
         opt = "with";
         Numpad_Panel.in_size = IN_MED;
-        Numpad_Panel.in_disp = "<html><p style=\"text-align:center;\"> INGRESE LA CANTIDAD DE RETIRO <br><br>FJD ";
+        Numpad_Panel.in_disp = "<html><p style=\"text-align:center;\"> INGRESE LA CANTIDAD DE RETIRO <br><br> S/. ";
         new_num = new Numpad_Panel();
         Numpad_Panel.in.clear();
         new_num.setVisible(true);
@@ -123,7 +123,7 @@ public class Main_Driver {
     {
         opt = "pay";
         Numpad_Panel.in_size = IN_MED;
-        Numpad_Panel.in_disp = "<html><p style=\"text-align:center;\"> INGRESE EL IMPORTE DEL PAGO <br><br> FJD ";
+        Numpad_Panel.in_disp = "<html><p style=\"text-align:center;\"> INGRESE EL IMPORTE DEL PAGO <br><br> S/. ";
         new_num = new Numpad_Panel();
         Numpad_Panel.in.clear();
         new_num.setVisible(true);
