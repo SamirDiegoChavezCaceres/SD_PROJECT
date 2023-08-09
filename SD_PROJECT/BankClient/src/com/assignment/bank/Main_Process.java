@@ -200,10 +200,29 @@ public class Main_Process {
                     Main_Driver.new_num.display_message();
                 }
                 else
-                {
+                {   
                     Main_Driver.bank_pros.withdraw(Main_Driver.acc_num, dept_val);
+                    
+                    try
+                    {
+                        Main_Driver.acc_bank =null;
+                        pros_connect(Main_Driver.depo_num);
+                    }
+                    catch (AccessException | NotBoundException ex)
+                    {
+                        Logger.getLogger(Main_Driver.class.getName()).log(Level.SEVERE, null, ex);
+                    } 
                     Main_Driver.bank_pros.deposit(Main_Driver.depo_num, dept_val);
-                }
+                    try
+                    {
+                        Main_Driver.acc_bank= null;
+                        pros_connect(Main_Driver.acc_num);
+                    }
+                    catch (AccessException | NotBoundException ex)
+                    {
+                        Logger.getLogger(Main_Driver.class.getName()).log(Level.SEVERE, null, ex);
+                    } 
+                }   
             } else {
                 Main_Driver.bank_pros.deposit(Main_Driver.acc_num, dept_val);
             }
